@@ -1,0 +1,85 @@
+\begin{statement}{3}
+  Sea $(X, Y)$ un vector aleatorio discreto que refleja la siguiente informaci\'on:
+  $X = 1$ si se da un shock positivo de oferta en la econom\'ia,
+  $X = 0$ si la econom\'ia no sufre ning\'un shock,
+  $X = -1$ si el shock es negativo,
+  $Y = 1$ si el nivel del empleo aumenta,
+  $Y = 0$ si se mantiene y
+  $Y = -1$ si disminuye.
+  La distribuci\'on de probabilidades conjunta est\'a dada por la siguiente tabla:
+  \begin{center}
+    \begin{tabular}{ | c | c | c | c | c | c | }
+      \hline
+      X \textbackslash \, Y & -1 & 0 & 1 \\ \hline
+      -1 & 5/24 & 3/24 & 0 \\ \hline
+      0 & 2/24 & 6/24 & 2/24 \\ \hline
+      1 & 1/24 & 2/24 & 3/24 \\
+      \hline
+    \end{tabular}
+  \end{center}
+\end{statement}
+
+\begin{statement}{a}
+  Si tener informaci\'on acerca del shock econ\'omico.
+  ¿Qu\'e es m\'as probable, que aumente o que disminuya el nivel de empleo?
+\end{statement}
+
+\begin{solution}
+  Sumando los valores en cada columna de la tabla calculamos
+  \[
+    \BP[Y = y, X \in \{-1, 0, 1\}] = \begin{cases}
+      8/24 & y = -1, \\
+      11/24 & y = 0, \\
+      5/24 & y = 1.
+    \end{cases}
+  \]
+  Observamos que es m\'as probable que el nivel de desempleo se mantenga.
+  Sin embargo, si solo nos fijamos en el aumento o la disminuci\'on, es m\'as probable que disminuya el empleo.
+\end{solution}
+
+\begin{statement}{b}
+  Si el schock ha sido negativo, ¿cambiar\'ia la respuesta en (a)?
+  ¿Cu\'a ser\'ia la probabilidad de que el empleo caiga, que se mantenga o que suba?
+\end{statement}
+
+\begin{solution}
+  Primero determinemos cu\'al es la probabilidad de que el shock sea negativo:
+  \[
+    \BP[X = -1, Y \in {-1, 0, 1}\} = \frac{5}{24} + \frac{3}{24} + 0 = \frac{1}{3}.
+  \]
+  Ahora calculemos la funci\'on de densidad del nivel de desempleo dado que el shock es negativo
+  \[
+    \BP[Y = y | X = -1] = \frac{\BP[Y = y \wedge X = -1]}{\BP[X = -1]} = \begin{cases}
+      5/8 & y = -1, \\
+      3/8 & y = 0, \\
+      0 & y = 1.
+    \end{cases}
+  \]
+  Observamos que la respuesta en (a) cambi\'o puesto que es m\'as probable
+  que el nivel de empleo disminuya dado que el shock fue negativo considerando las tres posibilidades.
+  Si solo consideramos el aumento y la disminuci\'on, la tendencia se mantiene, es decir, sigue siendo m\'as probable
+  que el empleo disminuya a que aumente.
+\end{solution}
+
+\begin{statement}{c}
+  Sin tener informaci\'on acerca del shock de la econom\'ia,
+  ¿cu\'al es el valor esperado de la variable que describe la evoluci\'on del empleo?
+\end{statement}
+
+\begin{solution}
+  De (a) obtenemos
+  \[
+    \BE[Y] = \sum_{y = -1}^1 y \, \BP[Y = y, X \in \{-1, 0, 1\}] = -\frac{1}{8}.
+  \]
+\end{solution}
+
+\begin{statement}{d}
+  ¿Cu\'al ser\'ia el valor esperado de la variable que representa el movimiento del empleo si el shock ha sido negativo?
+\end{statement}
+
+\begin{solution}
+  De (b) obtenemos
+  \[
+    \BE[Y] = \sum_{y = -1}^1 y \, \BP[Y = y, X = -1] = -\frac{5}{8}.
+  \]
+\end{solution}

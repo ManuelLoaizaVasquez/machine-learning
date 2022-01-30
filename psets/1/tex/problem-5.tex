@@ -1,0 +1,48 @@
+\begin{statement}{5}
+  La funci\'on del costo total de un fabricante est\'a dada por
+  \[
+    C(q) = \frac{q^2}{4} + 3q + 400,
+  \]
+  donde $C$ es el costo total de producir $q$ unidades.
+  ¿Para qu\'e nivel de producci\'on ser\'a el costo promedio por unidad un m\'inimo?
+  ¿Cu\'al es el m\'inimo?
+
+  \begin{note}
+    El costo promedio por unidad es $C / q$.
+  \end{note}
+
+\end{statement}
+
+\begin{solution}
+  Definamos el costo promedio por unidad como
+  \[
+    \wt{C}(q) = \frac{C(q)}{q} = \frac{q}{4} + 3 + \frac{400}{q}.
+  \]
+  Hallemos la derivada de $\wt{C}$
+  \[
+    \frac{d \wt{C}}{dq} = \frac{1}{4} - \frac{400}{q^2}.
+  \]
+  Ahora hallemos los puntos cr\'iticos de $\wt{C}$ (resolviendo $d \wt{C} / dq = 0$)
+  as\'i como los extremos. $\wt{C}$ alcanzar\'a su m\'aximo o m\'inimo en alguno de estos lugares.
+  Igualando $\frac{1}{4} - \frac{400}{q^2} = 0$ obtenemos $q = -40$ y $q = 40$.
+  El punto cr\'itico $q = -40$ queda descartado puesto que las unidades deben ser no negativas.
+  Asimismo, analizando la segunda derivada
+  \[
+    \frac{d^2 \wt{C}}{dq^2} = \frac{800}{q^3}
+  \]
+  en $q = 40$ es positiva, por lo cual la funci\'on es convexa y
+  $\wt{C}$ tendr\'ia un m\'inimo local.
+  Nos falta analizar los extremos para determinar si es un m\'inimo global.
+  En este caso particular, la funci\'on no est\'a definida en $q = 0$, por lo que tenemos
+  que analizar cuando $q \to 0$ y $q \to \infty$.
+  En ambos casos tenemos
+  \[
+    \lim_{q \to 0^+} \wt{C} = \lim_{q \to \infty} \wt{C} = \infty.
+  \]
+  Como $\wt{C} = \infty$ en cada extremo, el m\'inimo es global y es alcanzado en el punto
+  cr\'itico $q = 40$.
+  Finalmente, el m\'inimo valor que alcanza $\wt{C}$ es
+  \[
+    \wt{C}(40) = \frac{40}{4} + 3 + \frac{400}{40} = 23.
+  \]
+\end{solution}
