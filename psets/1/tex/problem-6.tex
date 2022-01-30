@@ -1,0 +1,46 @@
+\begin{statement}{6}
+  Dada la funci\'on $f: \BR^2 \to \BR$ con
+  \[
+    f(x, y) = x^2 + 2xy + 2y^2 + 2x - 2y.  
+  \]
+\end{statement}
+
+\begin{statement}{a}
+  Hallar el vector donde la funci\'on crece con mayor rapidez.
+\end{statement}
+
+\begin{solution}
+  Nos est\'an pidiendo hallar el vector gradiente.
+  Para esto primero hallemos las derivadas parciales
+  \[
+    \frac{\partial f(x, y)}{\partial x} = 2x + 2y + 2,
+  \]
+  \[
+    \frac{\partial f(x, y)}{\partial y} = 2x + 4y - 2
+  \]
+  y luego conseguimos
+  \[
+    \nabla f(x, y) = \begin{pmatrix}
+      2x + 2y + 2, \\
+      2x + 4y - 2
+    \end{pmatrix}.
+  \]
+\end{solution}
+
+\begin{statement}{b}
+  Hallar los puntos de la funci\'on no crece ni decrece.
+\end{statement}
+
+\begin{solution}
+  Estos puntos son aquellos tales que $\nabla f(x, y) = (0, 0)^T$.
+  Resolvamos el sistema de ecuaciones
+  \begin{align*}
+    2x + 2y + 2 &= 0\\
+    2x + 4y - 2 &= 0.
+  \end{align*}
+  Restando a la segunda ecuaci\'on la primera, obtenemos $2y - 4 = 0$,
+  por lo que $y = 2$. Reemplazando esto en cualquiera de las dos ecuaciones
+  conseguimos $x = -3$.
+  De esta manera, el \'unico punto en el cual la funci\'on no crece ni decrece
+  es $(x, y) = (-3, 2)$.
+\end{solution}
